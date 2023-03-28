@@ -1,0 +1,123 @@
+.body{
+    background: #40728D;
+    
+}
+
+.titleBox{
+    width: 100%;
+    height: 139px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 76px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+}
+
+.contentBox{
+    width: 100%;
+    text-align: center;
+}
+
+.content{
+    margin: 0 auto;
+    width: 56.25%;
+    height: 108px;
+
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.contentBetween{
+    margin: 0 auto;
+    width: 56.25%;
+    height: 108px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.whiteText{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #FFFFFF;
+}
+
+.textField{
+    width: 45.97%;
+    height: 36px;
+    background: #BBD8DE;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border-radius: 30px 30px 30px 30px;
+}
+
+.button{
+    background: #E5F6FA;
+    height: 79px;
+    width: 42.69%;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.button:hover{
+    transform:scale(1.1)
+}
+
+.blackText{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #000000;
+}
+
+.contentContinueGoogle{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 56.25%;
+    height: 108px;
+}
+
+button{
+    cursor: pointer;
+}
+
+@media (max-width: 847px){
+    .title{
+        font-size: 40px;
+    }
+
+    .whiteText{
+        font-size: 30px;
+    }
+
+    .blackText{
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,57 @@
+.tarjeta {
+    margin: 5px;
+    width: 20vw;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #1b597c;
+    border-radius: 10px;
+}
+.imagen img{
+    /* object-fit: cover; */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.imagen {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    overflow: hidden;
+}
+
+.content{
+    height: 6.66%;
+}
+
+.info {
+    height: 20%;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around; 
+    align-items: center;
+    color: white;
+}
+
+.title{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+}
+
+.title:hover{
+    color: #123c55;
+}
+
+.whiteText{
+    font-size: 10px;
+}
+
+.caja{
+    margin: 15px;
+    background-color: #123c55;
+    border-radius: 10px;
+}

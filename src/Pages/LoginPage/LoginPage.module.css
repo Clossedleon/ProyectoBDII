@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
+
+.body{
+    background: #40728D;
+}
+
+.titleBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 139px;
+    width: 100%;
+    
+}
+
+.title{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 114px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contentBox{
+    margin-top: 57px;
+    width: 100%;
+    text-align: center;
+}
+
+.contentAround{
+    margin: 0 auto;
+    height: 109px;
+    width: 56.33%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content{
+    margin: 0 auto;
+    height: 109px;
+    width: 56.33%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitle{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 76px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.whiteText{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #FFFFFF;
+
+}
+
+.textField{
+    height: 36px;
+    width: 45.97%;
+
+    background: #BBD8DE;
+}
+
+.button{
+    width: 40.69%;
+    height: 79px;
+    background: #E5F6FA;
+
+}
+
+button{    
+    border-radius: 30px 30px 30px 30px;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+input{
+    text-align: center;    
+    border-radius: 30px 30px 30px 30px;
+}
+
+.blackText{
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #000000;
+
+}
+
+.contentGoogle{
+    margin: 0 auto;
+    width: 56.25%;
+    height: 174px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonGoogle{
+    width: 67.22%;
+    height: 79px;
+    background: #E5F6FA;
+}
+
+@media (max-width: 622px){
+    .title{
+        font-size: 50px;
+    }
+    
+    .contentBox{
+        margin-top: 0;
+    }
+
+    .subtitle{
+        font-size: 40px;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .whiteText{
+        font-size: 20px;
+    }
+
+    .contentGoogle{
+        width: 100%;
+    }
+
+    .blackText{
+        font-size: 12px;
+    }
+}

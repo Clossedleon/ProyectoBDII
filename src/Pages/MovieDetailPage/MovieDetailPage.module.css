@@ -1,0 +1,9 @@
+.details {
+    display:flex;
+    flex-direction: column;
+    background-color: #40728D;
+    align-items: center;
+    justify-content:space-between;
+    /* height:95vh; */
+    background-color: red;
+}
