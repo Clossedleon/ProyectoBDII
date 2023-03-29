@@ -29,6 +29,8 @@ export const signInWithGoogle = async () => {
                 name: result.user.displayName,
                 email: result.user.email,
                 password: '',
+                id: result.user.uid,
+                likes: [],
             })
 
         }
@@ -56,6 +58,7 @@ export const registerWithEmailAndPassword = async (
         await createUserProfile(result.user.uid, {
             email,
             password,
+            id: result.user.uid ,
             ...extraData
         });
     }catch(error){
