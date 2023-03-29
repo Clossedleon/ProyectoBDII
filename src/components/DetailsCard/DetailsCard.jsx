@@ -1,4 +1,4 @@
-import { doc, query, where } from 'firebase/firestore'
+import { collection, doc, query, where } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase/config'
 import Styles from './DetailsCard.module.css'
@@ -6,9 +6,10 @@ import Styles from './DetailsCard.module.css'
 export function DetailsCard({ Movie, user }) {
     const { title, poster_path, genres, original_language, budget, overview, popularity, production_companies, release_date, status, id } = Movie
     const [like, setLike] = useState()
-    // useEffect(() => {
-    //     const q = query(doc(db, "users", user.id), where("likes", "array-contains", id))
-    // })
+    console.log(user)
+     useEffect(() => {
+        const q = query(collection(db, "users"), where("likes", "array-contains", id), where("id", "==", user.user_id))
+     })
 
     return (
         <div className={Styles.body}>
