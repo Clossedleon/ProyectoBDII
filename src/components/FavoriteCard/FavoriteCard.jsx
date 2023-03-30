@@ -4,7 +4,6 @@ import { useMovies } from '../../hooks/useMovies'
 import Styles from './FavoriteCard.module.css'
 
 export default function FavoriteCard({ MovieId }) {
-    console.log(MovieId)
 
     const [loading, setLoading] = useState(true)
 
