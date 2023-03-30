@@ -1,7 +1,7 @@
 .tarjeta {
     margin: 5px;
-    width: 20vw;
-    height: 80vh;
+    width: 30vw;
+    height: 90vh;
     overflow: hidden;
     background-color: #1b597c;
     border-radius: 10px;
@@ -29,4 +29,32 @@
     align-items: center;
     justify-content: space-around;
     text-align: center;
+}
+
+.caja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 92vh;
+    width: 31vw;
+    margin: 15px;
+    background-color: #123c55;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.boton {
+    background-color: #506b7a;
+    border-radius: 6px;
+    color: rgb(207, 207, 5);
+}
+
+.boton:hover{
+    background-color: #729fb8;
+    color: rgb(248, 248, 21);
+    cursor: pointer;
 }

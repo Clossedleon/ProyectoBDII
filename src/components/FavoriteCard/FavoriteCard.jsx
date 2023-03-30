@@ -23,12 +23,9 @@ export default function FavoriteCard({ MovieId }) {
         tagline: "l" 
     })
 
-    console.log(pelicula)
-
 
     useEffect(() => {
 
-        setLoading(true)
         getSingleMovie(MovieId)
         if (movie != null) {
             setPelicula(movie)
@@ -36,7 +33,7 @@ export default function FavoriteCard({ MovieId }) {
         }
         setLoading(false)
 
-    }, []) 
+    }, [movie]) 
 
     console.log(movie, loading)
 
@@ -46,26 +43,28 @@ export default function FavoriteCard({ MovieId }) {
     return (
         <>
             {loading ? <h1>Loading...</h1> : 
-                <div className={Styles.tarjeta}>
+                <div className={Styles.caja}>
+                    <div className={Styles.tarjeta}>
 
-                    <div className={Styles.imagen}>
-                        <Link to={`../movie/${id}`}><img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={`Poster de ${title}`} /></Link>
-                    </div>
-                    <div className={Styles.info}>
-                        <div>
-                            <Link to={`../movie/${id}`} className={Styles.title}><h1>{title}</h1></Link>
-                            <h3>{tagline}</h3>
+                        <div className={Styles.imagen}>
+                            <Link to={`../movie/${id}`}><img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={`Poster de ${title}`} /></Link>
                         </div>
-                    
-                        <h3 className={Styles.whiteText}>Lenguaje original: {original_language}</h3>
-                
-                        <h3>Estado: {status} </h3>
+                        <div className={Styles.info}>
+                            <div>
+                                <Link to={`../movie/${id}`} className={Styles.title}><h1>{title}</h1></Link>
+                                <h3>{tagline}</h3>
+                            </div>
                         
-                        <div className={Styles.boton}>
-                            <div className={Styles.quitar} onClick={() => {}}><h2>Quitar de favoritos</h2></div>
+                            <h3 className={Styles.whiteText}>Lenguaje original: {original_language}</h3>
+                    
+                            <h3>Estado: {status} </h3>
+                            
+                            <div className={Styles.boton}>
+                                <div className={Styles.quitar} onClick={() => {}}><h2>Quitar de favoritos</h2></div>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             }
         </>
