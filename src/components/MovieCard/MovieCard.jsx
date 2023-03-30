@@ -1,10 +1,37 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./MovieCard.module.css"
+import { db } from '../../firebase/config'
+import { doc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore'
 
-export default function MovieCard(Movie) {
+export default function MovieCard({Movie, user}) {
     //console.log(Movie)
-    const { id, poster_path, title, popularity, original_language } = Movie.Movie
+    const { id, poster_path, title, popularity, original_language } = Movie
+
+    const arrayinfo = (data) => {
+        for (var i = 0; i < data.length; i++) {
+            if(data[i] == id) {
+                return true
+            }
+        }
+        return false
+    }
+
+    const addFavorite = async() =>{
+        const ref = doc(db, "users", user.id);
+        const snap = await getDoc(ref)
+        const data = snap.data().likes
+        const info = arrayinfo(data)
+        if (!info) {
+            await updateDoc(ref, {
+                likes: arrayUnion(id)
+            });
+        } else {
+            await updateDoc(ref, {
+                likes: arrayRemove(id)});
+        }
+          
+    }
 
     return (
         <div className={styles.caja}>
@@ -32,8 +59,7 @@ export default function MovieCard(Movie) {
 
                     </div>
                     <div className={styles.title}>
-                    
-                        <h2 className={styles.yellowText}>Añadir a Favoritos</h2>
+                        <h2 onClick={addFavorite} className={styles.yellowText}>Añadir a Favoritos</h2>
 
                     </div>
                     
