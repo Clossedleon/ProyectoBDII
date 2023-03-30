@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import FavoriteCard from '../../components/FavoriteCard/FavoriteCard';
 import { useUser } from '../../context/UserContext';
 import Styles from './FavoritesPage.module.css';
@@ -14,21 +14,22 @@ export function FavoritesPage() {
     useEffect(() => {
         { !isLoading && user 
             setFavoritos(user.likes)
+
         } 
-    },[])
+    },[user])
 
 
     return (
         <>
-            <div style={Styles.titulo}>
+            <div className={Styles.titulo}>
                 <h1>Favoritos</h1>
             </div>
-            <div  style={Styles.descripcion}>
+            <div  className={Styles.descripcion}>
                 <p>
                     Seleccione la película que desee para ver sus detalles o quitarla de la lista!
                 </p>
             </div>
-            <div style={Styles.galeria}>
+            <div className={Styles.galeria}>
                 {
                     favoritos.length == 0 &&
                     <h3>No ha seleccionado como favorito ninguna película!</h3>

@@ -1,0 +1,23 @@
+.tarjeta {
+    margin: 5px;
+    width: 20vw;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #1b597c;
+    border-radius: 10px;
+}
+
+.imagen img {
+    /* object-fit: cover; */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    overflow: hidden;
+}
