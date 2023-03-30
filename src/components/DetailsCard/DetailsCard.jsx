@@ -28,7 +28,7 @@ export function DetailsCard({ Movie, user }) {
                             
                             <div className={Styles.genres}>
                                 {genres.map((genre) => (
-                                    <h3 className={Styles.gender}>- {genre.name} -</h3>
+                                    <h3 className={Styles.gender} key={genre.id}>- {genre.name} -</h3>
                                 ))}
                             </div>
 
@@ -42,7 +42,7 @@ export function DetailsCard({ Movie, user }) {
 
                                 <div className={Styles.companies}>
                                     {production_companies.map((company) => (
-                                        <h3 className={Styles.whiteSmallText}>- { company.name }</h3>
+                                        <h3 className={Styles.whiteSmallText} key={company.id}>- { company.name }</h3>
                                     ))}
 
                                 </div>
