@@ -5,14 +5,15 @@ import axios from "axios";
 import Styles from './HomePage.module.css'
 import { useMovies } from '../../hooks/useMovies'
 import MovieCard from '../../components/MovieCard/MovieCard'
+import { useUser } from '../../context/UserContext';
 
 
 export function HomePage() {
+  const user = useUser()
     const [page, setPage] = useState(1)
     const { getCommonMovies, getSoonMovies, Loading, movies } = useMovies()
     const [soon, setSoon] = useState(true)
   
-
     const API_URL = "https://api.themoviedb.org/3"
     const API_KEY = "b31f4c0464d55846ae657ecfc7b9ef53"
 
@@ -82,7 +83,7 @@ export function HomePage() {
             
             <button className={Styles.button2} onClick={searchMovies}>Buscar</button>
             
-            <i class="search"></i>
+            <i className="search"></i>
           
           </fieldset>
         
@@ -135,7 +136,7 @@ export function HomePage() {
                     <>
 
                     {movies2.map((movie) => (
-                      <MovieCard Movie={movie}></MovieCard>
+                      <MovieCard Movie={movie} key={movie.id} user={user.user}></MovieCard>
                     ))}
 
                     </>
@@ -149,7 +150,7 @@ export function HomePage() {
               : 
                 <>
                 {movies.map((movie) => (
-                  <MovieCard Movie={movie}></MovieCard>
+                  <MovieCard Movie={movie} key={movie.id} user={user.user}></MovieCard>
                   ))}                
                 </>
               };

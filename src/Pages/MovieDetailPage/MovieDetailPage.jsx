@@ -4,10 +4,8 @@ import { useMovies } from '../../hooks/useMovies'
 import { useParams } from 'react-router-dom'
 import { DetailsCard } from '../../components/DetailsCard/DetailsCard'
 import { Footer } from '../../components/Footer/Footer'
-import { useUser } from '../../context/UserContext'
 
 export function MovieDetailPage() {
-    const user = useUser()
     const movie_id = useParams()
     const { getSingleMovie, movie, Loading } = useMovies()
     console.log(movie)
@@ -40,7 +38,7 @@ export function MovieDetailPage() {
         <>
         
         <div className={styles.details}>
-        <DetailsCard Movie={movie} user={user.user} key={movie_id}></DetailsCard>
+        <DetailsCard Movie={movie} key={movie_id}></DetailsCard>
         </div>
 
         <Footer/>
