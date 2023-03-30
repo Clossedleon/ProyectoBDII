@@ -2,8 +2,32 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMovies } from '../../hooks/useMovies'
 import Styles from './FavoriteCard.module.css'
+import { doc, getDoc, updateDoc, arrayRemove } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
-export default function FavoriteCard({ MovieId }) {
+export default function FavoriteCard({ MovieId, user }) {
+
+    const arrayinfo = (data) => {
+        for (var i = 0; i < data.length; i++) {
+            if(data[i] == id) {
+                return true
+            }
+        }
+        return false
+    }
+
+    const removeFavorite = async() =>{
+        console.log(user)
+        const ref = doc(db, "users", user.id);
+        const snap = await getDoc(ref)
+        const data = snap.data().likes
+        const info = arrayinfo(data)
+        if (info) {
+            await updateDoc(ref, {
+                likes: arrayRemove(id)});
+            location.reload()
+            };
+        } 
 
     const [loading, setLoading] = useState(true)
 
@@ -35,8 +59,6 @@ export default function FavoriteCard({ MovieId }) {
 
     }, [movie]) 
 
-    console.log(movie, loading)
-
     const { title, poster_path, original_language, status, tagline, id } = pelicula
 
 
@@ -60,7 +82,7 @@ export default function FavoriteCard({ MovieId }) {
                             <h3>Estado: {status} </h3>
                             
                             <div className={Styles.boton}>
-                                <div className={Styles.quitar} onClick={() => {}}><h2>Quitar de favoritos</h2></div>
+                                <div className={Styles.quitar} onClick={removeFavorite}><h2>Quitar de favoritos</h2></div>
                             </div>
                         </div>
 
