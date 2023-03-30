@@ -18,6 +18,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 70%;
     overflow: hidden;
+}
+
+.info{
+    height:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
 }
