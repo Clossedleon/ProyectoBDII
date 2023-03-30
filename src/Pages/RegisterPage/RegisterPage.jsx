@@ -11,8 +11,7 @@ export function RegisterPage() {
   const [formData, setFormData] = useState({
     name:'',
     email:'',
-    password:'',
-    likes: []
+    password:''
   });
 
   const handleOnChange = (event) =>{

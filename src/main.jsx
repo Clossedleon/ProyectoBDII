@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HomePage } from './Pages/HomePage/HomePage'
-import { HOME_URL, LOGIN_URL, REGISTER_URL, MOVIE_URL, AnyElse_URL } from './constants/urls'
+import { HOME_URL, LOGIN_URL, REGISTER_URL, MOVIE_URL, AnyElse_URL, FAVORITE_URL } from './constants/urls'
 import './index.css'
 import { Layout } from './components/Layout/Layout'
 import { RegisterPage } from './Pages/RegisterPage/RegisterPage'
@@ -12,7 +12,8 @@ import { MovieDetailPage } from './Pages/MovieDetailPage/MovieDetailPage'
 import { PrivateRouteInicio } from './PrivateRoutes/PrivateRouteInicio/PrivateRouteInicio'
 import { AnyElsePage } from './Pages/AnyElsePage/AnyElsePage'
 import { LayoutFooter } from './components/Layout/LayoutFooter'
-
+import { FavoritesPage } from './Pages/FavoritesPage/FavoritesPage'
+          console.log(FAVORITE_URL)
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>    
@@ -41,9 +42,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <PrivateRouteInicio>
             <HomePage/>
           </PrivateRouteInicio>      
+            } />
+
+          <Route path={FAVORITE_URL} element = {
+            
+            <PrivateRouteInicio>
+            <FavoritesPage/>
+          </PrivateRouteInicio>      
           }/>
 
-      </Route>
+        </Route>
 
       {/* <Route path={PROFILE_URL} element = {<ProfilePage/>}/> 
       <Route path={AboutMe_URL} element = {<AboutMePage/>}/> 
