@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     left: 0;   
-    background-image: url(/images/Gambito.jpg) ;
+    background-image: url(/src/assets/Gambito.jpg) ;
     /* background-color: rgba(255, 122, 89, .5); */
     background-size: cover;
     background-position: top center;

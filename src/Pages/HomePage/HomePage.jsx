@@ -6,7 +6,8 @@ import Styles from './HomePage.module.css'
 import { useMovies } from '../../hooks/useMovies'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import { useUser } from '../../context/UserContext';
-
+import D from '../../assets/D.jpg'
+import I from '../../assets/I.jpg'
 
 export function HomePage() {
   const user = useUser()
@@ -118,7 +119,7 @@ export function HomePage() {
           {!searching?
           
             <div className={Styles.pasarPag}>
-              <div className={Styles.flecha} onClick={() => { page == 1 ? setPage(1) : setPage(page-1) }}><img src="images/I.jpg" alt="izquierda" /></div>
+              <div className={Styles.flecha} onClick={() => { page == 1 ? setPage(1) : setPage(page-1) }}><img src={I} alt="izquierda" /></div>
             </div>
           :
             <>
@@ -166,7 +167,7 @@ export function HomePage() {
           
           {!searching ? 
           
-            <div className={Styles.flecha} onClick={() => { page == 1000 ? setPage(1) : setPage(page + 1) }}><img src="images/D.jpg" alt="derecha" /></div>
+            <div className={Styles.flecha} onClick={() => { page == 1000 ? setPage(1) : setPage(page + 1) }}><img src={D} alt="derecha" /></div>
           
           :
             <>
