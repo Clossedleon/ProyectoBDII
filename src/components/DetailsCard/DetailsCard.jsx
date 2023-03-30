@@ -1,8 +1,8 @@
 import React from 'react'
 import Styles from './DetailsCard.module.css'
 
-export function DetailsCard({ Movie, user }) {
-    const { title, poster_path, genres, original_language, budget, overview, popularity, production_companies, release_date, status, id } = Movie
+export function DetailsCard({ Movie }) {
+    const { title, poster_path, genres, original_language, budget, overview, popularity, production_companies, release_date, status } = Movie
 
     
     return (
