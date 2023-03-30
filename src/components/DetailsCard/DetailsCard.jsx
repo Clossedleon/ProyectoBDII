@@ -5,11 +5,6 @@ import Styles from './DetailsCard.module.css'
 
 export function DetailsCard({ Movie, user }) {
     const { title, poster_path, genres, original_language, budget, overview, popularity, production_companies, release_date, status, id } = Movie
-    const [like, setLike] = useState()
-    console.log(user)
-     useEffect(() => {
-        const q = query(collection(db, "users"), where("likes", "array-contains", id), where("id", "==", user.user_id))
-     })
 
     return (
         <div className={Styles.body}>
