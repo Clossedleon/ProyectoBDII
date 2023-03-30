@@ -3,10 +3,9 @@ import { useMovies } from '../../hooks/useMovies'
 import Styles from './FavoriteCard.module.css'
 
 export default function FavoriteCard({ MovieId }) {
-    console.log(MovieId)
 
     const { getSingleMovie, movie} = useMovies()
-
+    console.log(movie)
         
     useEffect(() => {
         getSingleMovie(MovieId)
