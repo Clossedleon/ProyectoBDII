@@ -38,7 +38,7 @@ export function FavoritesPage() {
           {favoritos.length > 0 && (
             <div>
               {favoritos.map((movie_id) => (
-                <FavoriteCard MovieId={movie_id}></FavoriteCard>
+                <FavoriteCard MovieId={movie_id} key={movie_id}></FavoriteCard>
               ))}
             </div>
           )}
