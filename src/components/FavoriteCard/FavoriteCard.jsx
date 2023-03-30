@@ -5,19 +5,23 @@ import Styles from './FavoriteCard.module.css'
 export default function FavoriteCard({ MovieId }) {
     console.log(MovieId)
 
-    const { getSingleMovie, movie, Loading } = useMovies()
+    const { getSingleMovie, movie} = useMovies()
 
+        
     useEffect(() => {
-        if (!Loading && MovieId) {
-            getSingleMovie(`${MovieId}`)
-
-        }
+        getSingleMovie(MovieId)
     }, [])
+
 
     const { title, poster_path, genres, original_language, budget, overview, popularity, production_companies, release_date, status, tagline } = movie
 
+    
+
+
     return (
         <div>
+            <br />
+
             <div className={Styles.poster}>
                         <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={ `Poster de ${title}`} />
             </div>
@@ -50,8 +54,12 @@ export default function FavoriteCard({ MovieId }) {
             <h3>Fecha de lanzamiento: {release_date}</h3>
 
             <h3>Estado: {status} </h3>
+            
+            <div className={Styles.boton}>
+                <div className={Styles.quitar} onClick={() => {}}><h2>Quitar de favoritos</h2></div>
+            </div>
 
-
+            <br />
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FavoriteCard from '../../components/FavoriteCard/FavoriteCard';
 import { useUser } from '../../context/UserContext';
 import Styles from './FavoritesPage.module.css';
@@ -6,10 +6,17 @@ import { useMovies } from '../../hooks/useMovies'
 
 export function FavoritesPage() {
 
-    const { user } = useUser();
-    console.log(user)
+    const [favoritos, setFavoritos] = useState([])
 
-    const favoritos = user.likes
+    const { user, isLoading } = useUser();
+
+
+    useEffect(() => {
+        { !isLoading && user 
+            setFavoritos(user.likes)
+        } 
+    },[])
+
 
     return (
         <>
@@ -29,15 +36,14 @@ export function FavoritesPage() {
                 {
                     favoritos.length > 0 && 
                     <div>
-                        {favoritos.map((movie_id) => (
+                            {favoritos.map((movie_id) => (
+
                             <FavoriteCard MovieId={movie_id}></FavoriteCard>
                         ))}
                     </div>
                 }
             </div>
-            <div className={Styles.boton}>
-                <div className={Styles.quitar} onClick={() => {}}><h3>Quitar de favoritos</h3></div>
-            </div>
+
         </>
     )
 }

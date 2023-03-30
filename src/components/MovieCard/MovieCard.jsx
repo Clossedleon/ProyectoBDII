@@ -30,9 +30,7 @@ export default function MovieCard({Movie, user}) {
             await updateDoc(ref, {
                 likes: arrayRemove(id)});
         }
-          
     }
-
     return (
         <div className={styles.caja}>
             <div className={styles.tarjeta}>
