@@ -5,6 +5,7 @@
     justify-content: center;
     font-size: 40px;
     color: rgb(102, 102, 35);
+    background-color: rgba(141, 174, 182, 0.096);
 }
 
 .descripcion {
@@ -13,4 +14,13 @@
     align-items: center;
     justify-content: center;
     font-size: 30px;
+    background-color: rgba(141, 174, 182, 0.096);
+}
+
+.galeria {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(120, 167, 151);
 }

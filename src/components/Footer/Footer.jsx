@@ -15,15 +15,15 @@ export function Footer() {
         </div>
 
         <div className={Styles.container}>
-            <h1 className={Styles.teamText}>Almonte José,</h1>
+            <h1 className={Styles.teamText}>Roy Martin,</h1>
         </div>
 
         <div className={Styles.container}>
-            <h1 className={Styles.teamText}>Dávila Karen,</h1>
+            <h1 className={Styles.teamText}>Serpa León,</h1>
         </div>
 
         <div className={Styles.container}>
-            <h1 className={Styles.teamText}>Serpa León</h1>
+            <h1 className={Styles.teamText}>Santiago Urdaneta</h1>
         </div>
 
     </div>
