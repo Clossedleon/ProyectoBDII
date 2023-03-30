@@ -4,6 +4,7 @@ import {  HOME_URL, LOGIN_URL,  REGISTER_URL, FAVORITE_URL } from '../../constan
 import { UserContextProvider, useUser } from '../../context/UserContext'
 import { logout } from '../../firebase/auth-service'
 import Styles from './Navbar.module.css'
+
 export function Navbar() {
 
     

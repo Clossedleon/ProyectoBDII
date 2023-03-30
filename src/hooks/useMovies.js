@@ -11,6 +11,7 @@ export function useMovies() {
     const getSingleMovie = async (movieId) => {
         setLoading(true)
         const { data } = await fetchSingleMovie(movieId)
+        console.log(data)
         setMovie(data)
         setLoading(false)
         

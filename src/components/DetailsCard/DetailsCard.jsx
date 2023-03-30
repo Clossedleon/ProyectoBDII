@@ -4,7 +4,6 @@ import Styles from './DetailsCard.module.css'
 export function DetailsCard({ Movie }) {
     const { title, poster_path, genres, original_language, budget, overview, popularity, production_companies, release_date, status } = Movie
 
-    
     return (
         <div className={Styles.body}>
 

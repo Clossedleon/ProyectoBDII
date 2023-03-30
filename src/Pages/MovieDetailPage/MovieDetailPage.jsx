@@ -13,7 +13,7 @@ export function MovieDetailPage() {
     console.log(movie)
     useEffect(() => {
         if (!Loading && movie_id) {
-            getSingleMovie(movie_id)
+            getSingleMovie(movie_id.movie_id)
 
         }
     }, [])
