@@ -1,9 +1,9 @@
 // TODOS LOS METODOS DE AUTENTICACIÓN
 import {signInWithPopup,
     signOut,
-     createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      getAdditionalUserInfo
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    getAdditionalUserInfo
    } from 'firebase/auth'
 import { auth, googleProvider } from './config';
 import { createUserProfile } from './users-service';
@@ -29,8 +29,6 @@ export const signInWithGoogle = async () => {
                 name: result.user.displayName,
                 email: result.user.email,
                 password: '',
-                user_id: result.user.uid,
-                likes: [],
             })
 
         }
@@ -55,10 +53,13 @@ export const registerWithEmailAndPassword = async (
     try{
         const result = await createUserWithEmailAndPassword(auth, email, password);
         console.log("REGISTER EMAIL AND PASSWORD", result);
+        const likes = []
+        const user_id = result.user.uid
         await createUserProfile(result.user.uid, {
             email,
             password,
-            user_id: result.user.uid ,
+            likes,
+            user_id,
             ...extraData
         });
     }catch(error){

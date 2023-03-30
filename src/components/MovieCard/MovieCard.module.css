@@ -37,7 +37,7 @@
 .title{
     text-decoration: none;
     color: black;
-    font-size: 14px;
+    font-size: 20px;
     width: 80%;
     text-align: center;
 }
@@ -54,4 +54,10 @@
     margin: 15px;
     background-color: #123c55;
     border-radius: 10px;
+}
+
+.yellowText {
+    font-size: 15px;
+    color: yellow;
+    cursor: pointer;
 }

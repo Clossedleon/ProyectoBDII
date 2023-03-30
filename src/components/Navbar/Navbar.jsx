@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import {  HOME_URL, LOGIN_URL,  REGISTER_URL } from '../../constants/urls'
+import {  HOME_URL, LOGIN_URL,  REGISTER_URL, FAVORITE_URL } from '../../constants/urls'
 import { UserContextProvider, useUser } from '../../context/UserContext'
 import { logout } from '../../firebase/auth-service'
 import Styles from './Navbar.module.css'
@@ -17,7 +17,7 @@ export function Navbar() {
 
     
 
-  return (
+return (
     <main>
         <UserContextProvider>
 
@@ -79,6 +79,12 @@ export function Navbar() {
                                 <span className = {Styles.Links}> {user.name} </span>
 
                             </li>
+                            
+                            <li>
+                                <Link to={`favorites/${user.user_id}`}>
+                                    <span className={Styles.Links}> Favoritos </span>
+                                </Link>
+                            </li>      
 
                             <li>
                                     <button type = 'button' onClick={handleLogout} className = {Styles.button}>
@@ -92,7 +98,7 @@ export function Navbar() {
                         </>
                     )}
 
-                   
+                
 
                 </ul>
 

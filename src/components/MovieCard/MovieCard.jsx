@@ -31,6 +31,11 @@ export default function MovieCard(Movie) {
                         <h2 className={styles.whiteText}>{`Idioma original: ${original_language}`}</h2>
 
                     </div>
+                    <div className={styles.title}>
+                    
+                        <h2 className={styles.yellowText}>Añadir a Favoritos</h2>
+
+                    </div>
                     
                     
                 
